@@ -16,7 +16,10 @@
     "url": "https://github.com/Raynos/http-framework/issues",
     "email": "raynos2@gmail.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "redirecter": "~0.1.0",
+    "routes-router": "~1.2.1"
+  },
   "devDependencies": {},
   "licenses": [
     {

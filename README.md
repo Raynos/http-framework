@@ -38,6 +38,7 @@ I do not recommend you use this "framework". You should check
  - [`serve-browserify`][13]
  - [`npm-css`][14]
  - [`npm-less`][15]
+ - [`routes-router`][16]
 
 ## Installation
 
@@ -64,3 +65,4 @@ I do not recommend you use this "framework". You should check
   [13]: https://github.com/Raynos/serve-browserify
   [14]: https://github.com/defunctzombie/npm-css
   [15]: https://github.com/Raynos/npm-less
+  [16]: https://github.com/Raynos/routes-router
