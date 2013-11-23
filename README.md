@@ -31,6 +31,7 @@ see [the examples folder][17]
  - [ ] Finish porting express examples
  - [ ] Port connect examples
  - [ ] Port hapi examples
+ - [ ] Port restify examples
  - [ ] Get community feedback
  - [ ] Author new fresh examples
 
