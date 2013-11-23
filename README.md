@@ -17,6 +17,13 @@ I do not recommend you use this "framework". You should check
 
 ## Examples
 
+The examples are clones of [`express`][18] examples demonstrating
+  how to author web apps without frameworks.
+
+Credit for the applications goes to
+
+ - @visionmedia & express maintainers
+
 see [the examples folder][17]
 
 ## Modules
@@ -65,3 +72,4 @@ see [the examples folder][17]
   [15]: https://github.com/Raynos/npm-less
   [16]: https://github.com/Raynos/routes-router
   [17]: https://github.com/Raynos/http-framework/tree/master/examples
+  [18]: https://github.com/visionmedia/express
