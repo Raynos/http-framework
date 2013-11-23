@@ -1,3 +1,5 @@
+// based on https://github.com/visionmedia/express/blob/master/examples/web-service/index.js
+
 var http = require("http")
 var url = require("url")
 var Router = require("routes-router")
