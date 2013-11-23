@@ -9,7 +9,7 @@ function show(opts) {
         h("h1", "Users"),
         h("#users", opts.users.map(function (user, index) {
             return h("li", [
-                h("a", { href: "/users/" + index }, user.name),
+                h("a", { href: "/users/" + index }, user.name), " ",
                 h("a.edit", { href: "/users/" + index + "/edit" }, "edit")
             ])
         }))

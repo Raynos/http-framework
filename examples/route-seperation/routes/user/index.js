@@ -1,5 +1,10 @@
-module.exports = users
+var sendHtml = require("send-data/html")
 
-function users(req, res) {
-    res.end("TODO")
+var usersPage = require("../../templates/users/index.js")
+var users = require("./user-db.js")
+
+module.exports = usersRoute
+
+function usersRoute(req, res) {
+    sendHtml(req, res, usersPage({ title: "Users", users: users }))
 }

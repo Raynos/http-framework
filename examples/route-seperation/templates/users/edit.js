@@ -6,7 +6,7 @@ module.exports = edit
 
 function edit(opts) {
     return layout(opts.title, [
-        h("h1", "Editing", opts.name),
+        h("h1", "Editing ", opts.name),
         h("#user",
             h("form", { method: "post" }, [
                 h("p", [

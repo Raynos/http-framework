@@ -1,5 +1,9 @@
+var sendHtml = require("send-data/html")
+
+var homePage = require("../templates/home.js")
+
 module.exports = home
 
 function home(req, res) {
-    res.end("TODO")
+    sendHtml(req, res, homePage({ title: "Route seperation example"}))
 }
