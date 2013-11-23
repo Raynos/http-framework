@@ -26,6 +26,14 @@ Credit for the applications goes to
 
 see [the examples folder][17]
 
+## Todo
+
+ - [ ] Finish porting express examples
+ - [ ] Port connect examples
+ - [ ] Port hapi examples
+ - [ ] Get community feedback
+ - [ ] Author new fresh examples
+
 ## Modules
 
  - [`send-data`][1]
