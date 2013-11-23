@@ -15,11 +15,9 @@ I do not recommend you use this "framework". You should check
   out the small modules and use them directly. Use the list of
   examples here for inspiration.
 
-## Example
+## Examples
 
-```js
-// Work in progress
-```
+see [the examples folder][17]
 
 ## Modules
 
@@ -66,3 +64,4 @@ I do not recommend you use this "framework". You should check
   [14]: https://github.com/defunctzombie/npm-css
   [15]: https://github.com/Raynos/npm-less
   [16]: https://github.com/Raynos/routes-router
+  [17]: https://github.com/Raynos/http-framework/tree/master/examples
