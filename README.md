@@ -23,21 +23,21 @@ I do not recommend you use this "framework". You should check
 
 ## Modules
 
- - [`send-data`][]
- - [`body`][]
- - [`routes`][]
- - [`mapletree`][]
- - [`methods`][]
- - [`request`][]
- - [`cookies`][]
- - [`redsess`][]
- - [`level-session`][]
- - [`useragent`][]
- - [`serve-browserify`][]
- - [`npm-less`][]
- - [`st`][]
- - [`config-chain`][]
- - [`redirecter`][]
+ - [`send-data`][1]
+ - [`body`][2]
+ - [`routes`][3]
+ - [`mapleTree`][4]
+ - [`http-methods`][5]
+ - [`request`][6]
+ - [`cookies`][7]
+ - [`redsess`][8]
+ - [`level-session`][9]
+ - [`st`][10]
+ - [`config-chain`][11]
+ - [`redirecter`][12]
+ - [`serve-browserify`][13]
+ - [`npm-css`][14]
+ - [`npm-less`][15]
 
 ## Installation
 
@@ -48,3 +48,19 @@ I do not recommend you use this "framework". You should check
  - Raynos
 
 ## MIT Licenced
+
+  [1]: https://github.com/Raynos/send-data
+  [2]: https://github.com/Raynos/body
+  [3]: https://github.com/aaronblohowiak/routes.js
+  [4]: https://github.com/saambarati/mapleTree
+  [5]: https://github.com/Raynos/http-methods
+  [6]: https://github.com/mikeal/request
+  [7]: https://github.com/jed/cookies
+  [8]: https://github.com/isaacs/redsess
+  [9]: https://github.com/rvagg/level-session
+  [10]: https://github.com/isaacs/st
+  [11]: https://github.com/dominictarr/config-chain
+  [12]: https://github.com/Raynos/redirecter
+  [13]: https://github.com/Raynos/serve-browserify
+  [14]: https://github.com/defunctzombie/npm-css
+  [15]: https://github.com/Raynos/npm-less
