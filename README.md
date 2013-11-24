@@ -113,6 +113,7 @@ For now see the [examples folder][17]
  - [ ] Port connect examples
  - [ ] Port hapi examples
  - [ ] Port restify examples
+ - [ ] Port partial.js examples
  - [ ] Finish documentation
  - [ ] Get community feedback
  - [ ] Author new fresh examples
