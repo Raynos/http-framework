@@ -33,12 +33,87 @@ See the [`package.json`][19] dependencies hash for an example of
 
 For a complete list of [Modules check out the wiki][20]
 
+## Documentation
+
+### [`send-json`](https://github.com/Raynos/send-data)
+
+> I want to send a JSON payload to my user
+
+```js
+var http = require("http")
+var sendJson = require("http-framework/send-json")
+
+http.createServer(function (req, res) {
+    sendJson(req, res, {
+        sending: "json"
+    })
+}).listen(8080)
+```
+
+Alternatively by hand:
+
+```js
+var http = require("http")
+
+http.createServer(function (req, res) {
+    var payload = JSON.stringify({
+        sending: "json"
+    })
+    res.statusCode = 200
+    res.setHeader("Content-Type", "application/json")
+    res.setHeader("Content-Length", payload.length)
+    res.end(payload)
+}).listen(8080)
+```
+
+### [`send-html`](https://github.com/Raynos/send-data)
+
+
+> I want to send a HTML payload to my user
+
+```js
+var http = require("http")
+var fs = require("fs")
+var sendHtml = require("http-framework/send-html")
+
+var page = fs.readFileSync(__dirname + "/static/index.html")
+
+http.createServer(function (req, res) {
+    sendHtml(req, res, page)
+}).listen(8080)
+```
+
+Alternatively by hand:
+
+```js
+var http = require("http")
+var fs = require("fs")
+
+var page = fs.readFileSync(__dirname + "/static/index.html")
+
+http.createServer(function (req, res) {
+    res.statusCode = 200
+    res.setHeader("Content-Type", "text/html")
+    res.setHeader("Content-Length", page.length)
+    res.end(page)
+}).listen(8080)
+```
+
+### rest of the modules
+
+```js
+// TODO
+```
+
+For now see the [examples folder][17]
+
 ## Todo
 
  - [ ] Finish porting express examples
  - [ ] Port connect examples
  - [ ] Port hapi examples
  - [ ] Port restify examples
+ - [ ] Finish documentation
  - [ ] Get community feedback
  - [ ] Author new fresh examples
 
