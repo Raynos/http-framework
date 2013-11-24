@@ -56,9 +56,9 @@ Alternatively by hand:
 var http = require("http")
 
 http.createServer(function (req, res) {
-    var payload = JSON.stringify({
+    var payload = new Buffer(JSON.stringify({
         sending: "json"
-    })
+    }))
     res.statusCode = 200
     res.setHeader("Content-Type", "application/json")
     res.setHeader("Content-Length", payload.length)
