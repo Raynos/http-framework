@@ -85,7 +85,7 @@ http.createServer(function (req, res) {
 
 ### [`form-body`](https://github.com/Raynos/body)
 
-> I want to read the body of a HTML <form> submission.
+> I want to read the body of a HTML &lt;form&gt; submission.
 
 ```js
 var http = require("http")
