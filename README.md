@@ -108,22 +108,29 @@ Alternatively by hand:
 ```js
 var http = require("http")
 var querystring = require("qs")
+var StringDecoder = require("string_decoder").StringDecoder
 
 http.createServer(function (req, res) {
     var requestBody = ""
+    // use a StringDecoder to parse two byte UTF8 characters.
+    // if you use string concatenation you might get half of
+    // a two byte character and your body will be wrong
+    var stringDecoder = new StringDecoder()
 
     req.on("data", onData)
     req.once("end", onEnd)
     req.once("error", onError)
 
     function onData(chunk) {
-        requestBody += chunk
+        requestBody += stringDecoder.write(chunk)
     }
 
     function onEnd() {
         // remove listeners to avoid leaks
         req.removeListener("data", onData)
         req.removeListener("error", onError)
+
+        requestBody += stringDecoder.end()
 
         var body = querystring.parse(requestBody)
 
