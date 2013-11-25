@@ -80,7 +80,53 @@ http.createServer(function (req, res) {
         res.setHeader("Content-Type", stat.size)
         stream.pipe(res)
     })
-})
+}).listen(8080)
+```
+
+### [`form-body`](https://github.com/Raynos/body)
+
+> I want to read the body of a HTML <form> submission.
+
+```js
+var http = require("http")
+var formBody = require("http-framework/form-body")
+
+http.createServer(function (req, res) {
+    formBody(req, res, function (err, body) {
+        if (err) {
+            res.statusCode = 500
+            res.end(err.message)
+        }
+
+        res.end("you submitted " + JSON.stringify(body))
+    })
+}).listen(8080)
+```
+
+Alternatively by hand:
+
+```js
+var http = require("http")
+var querystring = require("qs")
+
+http.createServer(function (req, res) {
+    var requestBody = ""
+
+    req.on("data", function (chunk) {
+        requestBody += chunk
+    })
+
+    req.once("end", function () {
+        var body = querystring.parse(requestBody)
+
+        res.end("you submitted " + JSON.stringify(body))
+    })
+
+    req.once("error", function (err) {
+        res.statusCode = 500
+        res.end(err.message)
+    })
+}).listen(8080)
 ```
 
 ### [`send-json`](https://github.com/Raynos/send-data)
