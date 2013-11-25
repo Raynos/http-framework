@@ -148,6 +148,11 @@ http.createServer(function (req, res) {
 }).listen(8080)
 ```
 
+Note that this hand written alternative has a buffer overflow
+attack in it. It never keeps appending to `requestBody` and 
+will crash the process if someone sends you a chunked encoded
+body of 100s of GBs.
+
 ### [`send-json`](https://github.com/Raynos/send-data)
 
 > I want to send a JSON payload to my user
