@@ -112,20 +112,32 @@ var querystring = require("qs")
 http.createServer(function (req, res) {
     var requestBody = ""
 
-    req.on("data", function (chunk) {
-        requestBody += chunk
-    })
+    req.on("data", onData)
+    req.once("end", onEnd)
+    req.once("error", onError)
 
-    req.once("end", function () {
+    function onData(chunk) {
+        requestBody += chunk
+    }
+
+    function onEnd() {
+        // remove listeners to avoid leaks
+        req.removeListener("data", onData)
+        req.removeListener("error", onError)
+
         var body = querystring.parse(requestBody)
 
         res.end("you submitted " + JSON.stringify(body))
-    })
+    }
 
-    req.once("error", function (err) {
+    function onError(err) {
+        // // remove listeners to avoid leaks
+        req.removeListener("data", onData)
+        req.removeListener("end", onEnd)
+
         res.statusCode = 500
         res.end(err.message)
-    })
+    }
 }).listen(8080)
 ```
 
