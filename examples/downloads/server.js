@@ -1,9 +1,9 @@
+// based on https://github.com/visionmedia/express/tree/master/examples/downloads
 var http = require("http")
-var basename = require("path").basename
-var fs = require("fs")
 var Router = require("routes-router")
 var sendHtml = require("send-data/html")
-var filed = require("filed")
+
+var serveFileDownload = require("./serve-file-download.js")
 
 var app = Router()
 
@@ -17,20 +17,7 @@ app.addRoute("/", function (req, res) {
 app.addRoute("/files/*", function (req, res, opts, cb) {
     var file = opts.splats[0]
     var uri = __dirname  + "/files/" + file
-
-    fs.stat(uri, function (err, stat) {
-        // 404
-        if (err && err.code === "ENOENT") {
-            res.statusCode = 404
-            return res.end("Cant find that file, sorry!")
-        } else if (err) {
-            return cb(err)
-        }
-
-        res.setHeader("Content-Disposition", "attachment; filename=\"" +
-            basename(uri) + "\"")
-        filed(uri).pipe(res)
-    })
+    serveFileDownload(req, res, uri, cb)
 })
 
 var server = http.createServer(app)

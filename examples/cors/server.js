@@ -1,3 +1,4 @@
+// based on https://github.com/visionmedia/express/tree/master/examples/cors
 var http = require("http")
 var Router = require("routes-router")
 var filed = require("filed")

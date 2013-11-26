@@ -1,3 +1,4 @@
+// based on https://github.com/visionmedia/express/tree/master/examples/cookies
 var http = require("http")
 var Router = require("routes-router")
 var redirect = require("redirecter")
