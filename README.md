@@ -233,6 +233,7 @@ For now see the [examples folder][17]
 
  - [ ] Finish porting express examples
  - [ ] Port connect examples
+ - [ ] Port koajs examples
  - [ ] Port hapi examples
  - [ ] Port restify examples
  - [ ] Port partial.js examples
