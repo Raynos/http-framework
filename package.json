@@ -32,7 +32,8 @@
     "media-types": "~1.0.3",
     "cookies": "~0.3.7",
     "corsify": "~1.0.2",
-    "json-globals": "~0.2.1"
+    "json-globals": "~0.2.1",
+    "multiparty": "~3.1.0"
   },
   "devDependencies": {
     "redis": "~0.9.0",
