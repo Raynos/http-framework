@@ -5,9 +5,9 @@ var formBody = require("body/form")
 var TypedError = require("error/typed")
 
 var UserModel = require("./model.js")
-var usersPage = require("./templates/list.js")
-var editPage = require("./templates/edit.js")
-var userPage = require("./templates/show.js")
+var usersPage = require("./views/list.js")
+var editPage = require("./views/edit.js")
+var userPage = require("./views/show.js")
 
 var UserNotFound = TypedError({
     message: "User %s not found",
@@ -27,8 +27,8 @@ function UserController(config) {
     // We instantiate our model here with the database configuration
     // the model is local to this user feature
     var model = UserModel(config.db)
-    // we set up configuration to pass to our templates.
-    var templateConfig = { layout: config.layout }
+    // we set up configuration to pass to our views.
+    var viewsConfig = { layout: config.layout }
 
     controller.addRoute("/", function (req, res, opts, cb) {
         model.getAll(function (err, users) {
@@ -36,7 +36,7 @@ function UserController(config) {
                 return cb(err)
             }
 
-            sendHtml(req, res, usersPage(users, templateConfig))
+            sendHtml(req, res, usersPage(users, viewsConfig))
         })
     })
 
@@ -50,7 +50,7 @@ function UserController(config) {
                 return cb(UserNotFound(opts.id))
             }
 
-            sendHtml(req, res, editPage(user, templateConfig))
+            sendHtml(req, res, editPage(user, viewsConfig))
         })
     })
 
@@ -65,7 +65,7 @@ function UserController(config) {
                     return cb(UserNotFound(opts.id))
                 }
 
-                sendHtml(req, res, userPage(user, templateConfig))
+                sendHtml(req, res, userPage(user, viewsConfig))
             })
         },
         POST: function (req, res, opts, cb) {

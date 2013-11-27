@@ -8,10 +8,10 @@ var sendHtml = require("send-data/html")
 var st = require("st")
 var extend = require("xtend")
 
-// global templates live in the top level templates folder
-var errorPage = require("./templates/error-page.js")
-var notFoundPage = require("./templates/not-found.js")
-var layout = require("./templates/layout.js")
+// global views live in the top level views folder
+var errorPage = require("./views/error-page.js")
+var notFoundPage = require("./views/not-found.js")
+var layout = require("./views/layout.js")
 var Db = require("./db.js")
 
 // NODE_ENV is used to turn a server from local to production
@@ -51,7 +51,7 @@ var app = Router({
 })
 
 // configure static file server globally. Note that features
-// don't reference /static in their templates. Only the global
+// don't reference /static in their views. Only the global
 // layout does.
 app.addRoute("/static/*", st({
     path: path.join(__dirname, "static"),
