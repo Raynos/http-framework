@@ -31,7 +31,8 @@
     "pwd": "0.0.2",
     "media-types": "~1.0.3",
     "cookies": "~0.3.7",
-    "corsify": "~1.0.2"
+    "corsify": "~1.0.2",
+    "json-globals": "~0.2.1"
   },
   "devDependencies": {
     "redis": "~0.9.0",
