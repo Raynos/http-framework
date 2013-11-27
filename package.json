@@ -34,7 +34,8 @@
     "corsify": "~1.0.2"
   },
   "devDependencies": {
-    "redis": "~0.9.0"
+    "redis": "~0.9.0",
+    "online": "0.0.1"
   },
   "licenses": [
     {
