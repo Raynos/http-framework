@@ -1,5 +1,4 @@
 // based on https://github.com/visionmedia/express/blob/master/examples/expose-data-to-client/index.js
-
 var http = require("http")
 var Router = require("routes-router")
 var redirect = require("redirecter")

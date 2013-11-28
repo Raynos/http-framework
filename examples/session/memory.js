@@ -1,3 +1,4 @@
+// based on https://github.com/visionmedia/express/blob/master/examples/session/redis.js
 var http = require("http")
 var Router = require("routes-router")
 var Session = require("generic-session")

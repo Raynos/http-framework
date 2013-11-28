@@ -1,3 +1,4 @@
+// based on https://github.com/visionmedia/express/blob/master/examples/route-separation/index.js
 var http = require("http")
 var Router = require("routes-router")
 

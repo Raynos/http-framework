@@ -1,3 +1,4 @@
+// based on https://github.com/visionmedia/express/blob/master/examples/error-pages/index.js
 var http = require("http")
 
 var app = http.createServer(function (req, res) {

@@ -1,5 +1,4 @@
 // https://github.com/visionmedia/express/blob/master/examples/content-negotiation/index.js
-
 var http = require("http")
 var Router = require("routes-router")
 var mediaTypes = require("media-types")

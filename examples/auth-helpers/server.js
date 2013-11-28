@@ -1,5 +1,4 @@
 // based on https://github.com/visionmedia/express/blob/master/examples/route-middleware/index.js
-
 var http = require("http")
 var Router = require("routes-router")
 var Session = require("generic-session")

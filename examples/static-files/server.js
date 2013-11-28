@@ -1,5 +1,4 @@
 // based on https://github.com/visionmedia/express/blob/master/examples/static-files/index.js
-
 var http = require("http")
 var st = require("st")
 var Router = require("routes-router")
