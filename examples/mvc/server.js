@@ -6,7 +6,6 @@ var Router = require("routes-router")
 var cc = require("config-chain")
 var sendHtml = require("send-data/html")
 var st = require("st")
-var extend = require("xtend")
 
 // global views live in the top level views folder
 var errorPage = require("./views/error-page.js")
@@ -32,6 +31,15 @@ config.layout = layout
 // store the database on the config. This way other features
 // can all share the same database
 config.db = Db(config)
+
+// here we set what features are installed on our server
+// in the config. We store the uri locations where the
+// features live in this hash
+config.features = {
+    "user": "/user",
+    "pet": "/pet",
+    "main": "/"
+}
 
 var app = Router({
     errorHandler: function (req, res, err) {
@@ -62,10 +70,10 @@ var MainFeature = require("./features/main.js")
 var UserFeature = require("./features/user.js")
 
 // Load the main feature into our server
-// we tell the feature what uri it's mounted at using uri on the config
-app.addRoute("/", MainFeature(extend(config, { uri: "/" })))
+app.addRoute("/", MainFeature(config))
 
-app.addRoute("/user", UserFeature(extend(config, { uri: "/user" })))
+// Load the user feature into our server
+app.addRoute("/user", UserFeature(config))
 
 var server = http.createServer(app)
 server.listen(3000)
