@@ -15,16 +15,23 @@ I do not recommend you use this "framework". You should check
   out the small modules and use them directly. Use the list of
   examples here for inspiration.
 
+http-framework is an OPEN Open Source Project, see the Contributing 
+  section to find out what this means.
+
 ## [Examples][17]
 
-The examples are clones of [`express`][18] examples demonstrating
+### [`express`][18] inspired examples
+
+These examples are clones of [`express`][18] examples demonstrating
   how to author web apps without frameworks.
+
+ - [auth](https://github.com/Raynos/http-framework/tree/master/examples/auth)
+    An example demonstrating how to use `pwd` and `generic-session` how to
+    login and authenticate users
 
 Credit for the applications goes to
 
  - @visionmedia & express maintainers
-
-see [the examples folder][17]
 
 ## [Modules][20]
 
