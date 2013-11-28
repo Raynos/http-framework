@@ -20,21 +20,22 @@ var UserNotFound = TypedError({
 module.exports = UserController
 
 function UserController(config) {
-    // to enable using sub routes in our controller we create
-    // a new router. This router is a ChildRouter and will delegate
-    // all error and 404 handler to it's parent. i.e. the global
-    // application
-    var controller = Router()
-    // We instantiate our model here with the database configuration
-    // the model is local to this user feature
-    var model = UserModel(config.db)
-
     // the prefix uri for this feature (the user feature) is stored
     // on the features hash in config
     // we could also check for other features like the pet feature
     // and throw an error if the pet feature is not installed
     var prefix = config.features.user
 
+    // to enable using sub routes in our controller we create
+    // a new router. This router is a ChildRouter and will delegate
+    // all error and 404 handler to it's parent. i.e. the global
+    // application
+    var controller = Router({ prefix: prefix })
+
+    // We instantiate our model here with the database configuration
+    // the model is local to this user feature
+    var model = UserModel(config.db)
+    
     // we set up configuration to pass to our views.
     // we also set up an urlMap so that views are not hard coded
     // to specific paths
@@ -45,7 +46,8 @@ function UserController(config) {
         "pet": format.bind(null, config.features.pet + "/{petId}")
     } }
 
-    controller.addRoute("/", function (req, res, opts, cb) {
+    // optionally /. so its /user & /user/
+    controller.addRoute("/?", function (req, res, opts, cb) {
         model.getAll(function (err, users) {
             if (err) {
                 return cb(err)
@@ -95,6 +97,25 @@ function UserController(config) {
                     }
 
                     // setMessage('Information updated!')
+                    redirect(req, res, prefix + "/" + opts.userId)
+                })
+            })
+        }
+    })
+
+    controller.addRoute("/:userId/pet", {
+        POST: function (req, res, opts, cb) {
+            formBody(req, res, function (err, body) {
+                if (err) {
+                    return cb(err)
+                }
+
+                model.addPet(opts.userId, body.name, function (err, user) {
+                    if (err) {
+                        return cb(err)
+                    }
+
+                    // setMesssage("Added pet" + body.name)
                     redirect(req, res, prefix + "/" + opts.userId)
                 })
             })

@@ -7,7 +7,7 @@ function layout(title, content) {
         h("html", [
             h("head", [
                 h("title", title),
-                h("link", { href: "style.css", rel: "stylesheet" })
+                h("link", { href: "/static/style.css", rel: "stylesheet" })
             ]),
             h("body", content)
         ]).outerHTML

@@ -1,3 +1,10 @@
+// based on https://github.com/visionmedia/express/tree/master/examples/mvc
+
+// REMEMBER
+//
+// run `make install` in the root to install nested dependencies!!!
+//
+
 var http = require("http")
 var path = require("path")
 var console = require("console")
@@ -24,6 +31,9 @@ var config = cc(
     path.join(__dirname, "config", "config.json"),
     path.join(__dirname, "config", "config." + NODE_ENV + ".json")
 ).store
+
+// make the database path local to entry point instead of CWD
+config.dbPath = path.join(__dirname, config.dbPath)
 
 // store the layout on the config. This way other features
 // can use the same layout!
@@ -66,14 +76,18 @@ app.addRoute("/static/*", st({
     url: "/static"
 }))
 
-var MainFeature = require("./features/main.js")
-var UserFeature = require("./features/user.js")
+var MainFeature = require("./features/main")
+var UserFeature = require("./features/user")
+var PetFeature = require("./features/pet")
 
 // Load the main feature into our server
 app.addRoute("/", MainFeature(config))
 
 // Load the user feature into our server
-app.addRoute("/user", UserFeature(config))
+app.addRoute("/user*?", UserFeature(config))
+
+// Load the pet feature into our server
+app.addRoute("/pet*?", PetFeature(config))
 
 var server = http.createServer(app)
 server.listen(3000)
