@@ -231,7 +231,7 @@ For now see the [examples folder][17]
 
 ## Todo
 
- - [ ] Finish porting express examples
+ - [x] Finish porting express examples
  - [ ] Port connect examples
  - [ ] Port koajs examples
  - [ ] Port hapi examples
