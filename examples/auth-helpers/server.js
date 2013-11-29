@@ -1,5 +1,5 @@
 // based on https://github.com/visionmedia/express/blob/master/examples/route-middleware/index.js
-var http = require("http")
+var http = require("http") // really should use https for security
 var Router = require("routes-router")
 var Session = require("generic-session")
 var MemoryStore = require("generic-session").MemoryStore
@@ -161,6 +161,7 @@ app.addRoute("/user/:id/edit", function (req, res, opts, cb) {
     })
 })
 
+// really should use https for security
 var server = http.createServer(app)
 server.listen(3000)
 console.log("auth helpers server listen on port 3000")

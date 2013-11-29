@@ -1,5 +1,5 @@
 // based on https://github.com/visionmedia/express/blob/master/examples/auth/app.js
-var http = require("http")
+var http = require("http") // really should use https for security
 var Router = require("routes-router")
 var pwd = require("pwd")
 var redirect = require("redirecter")
@@ -192,6 +192,7 @@ app.addRoute("/login", {
     }
 })
 
+// really should use https for security
 var server = http.createServer(app)
 server.listen(3000)
 console.log("example auth server listening on port 3000")
