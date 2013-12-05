@@ -28,8 +28,8 @@ var NODE_ENV = process.env.NODE_ENV
 // config and overwrites it with the NODE_ENV config for 
 // config.production.json or config.developer.json if it exists
 var config = cc(
-    path.join(__dirname, "config", "config.json"),
-    path.join(__dirname, "config", "config." + NODE_ENV + ".json")
+    path.join(__dirname, "config", "config." + NODE_ENV + ".json"),
+    path.join(__dirname, "config", "config.json")
 ).store
 
 // make the database path local to entry point instead of CWD
