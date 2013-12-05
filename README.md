@@ -162,7 +162,7 @@ var config = {}
     }
 
     // do a thing
-    var uri = configOpts.shift()
+    var uri = configOpts.pop()
     fs.readFile(uri, function (err, file) {
         if (err) {
             return callback(err)
