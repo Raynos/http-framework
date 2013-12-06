@@ -6,9 +6,11 @@ var setTimeout = require("timers").setTimeout
 
 // configure the Tail so that it does your own error handling
 // in this case we log things
-var tail = Tail(function (err, meta) {
+var tail = Tail(function errorHandler(err, meta) {
     console.log("error happened %s on uri %s for event %s with key %s", 
         err.message, meta.req.url, meta.name, meta.key)
+}, function succcesHandler(result, meta) {
+    console.log("operation succeeded %s", meta.name)
 })
 var app = Router()
 
@@ -42,15 +44,17 @@ var server = http.createServer(app)
 server.listen(3000)
 console.log("tail server listening on port 3000")
 
-function Tail(errorHandler) {
+function Tail(errorHandler, succcesHandler) {
     function tail(name, opts) {
         opts.name = name
 
         return callback
 
-        function callback(err) {
+        function callback(err, result) {
             if (err) {
                 errorHandler(err, opts)
+            } else if (succcesHandler) {
+                succcesHandler(result, opts)
             }
         }
     }
