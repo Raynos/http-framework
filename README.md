@@ -232,7 +232,16 @@ function parseArguments(args) {
 
 > I want to set and get HTTP cookies.
 
+Using `cookies` you cam `get()` and `set()` HTTP cookies on a req / res
+  pair. `cookies` also allows you to handle options like signed cookies
+  and setting the domain / http only flag
+
+```js
+var http = require("http")
+var cookies = require("cookies")
+
 // TODO
+```
 
 ### [`filed`](https://github.com/mikeal/filed)
 
