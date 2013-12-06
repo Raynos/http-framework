@@ -431,9 +431,9 @@ For now see the [examples folder][17]
 ## Todo
 
  - [x] Finish porting express examples
+ - [ ] continue porting hapi examples
  - [ ] Port connect examples
  - [ ] Port koajs examples
- - [ ] Port hapi examples
  - [ ] Port restify examples
  - [ ] Port partial.js examples
  - [ ] Finish documentation
