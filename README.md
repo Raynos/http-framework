@@ -93,6 +93,8 @@ Credit for the application's goes to
 
  - @visionmedia & express maintainers
 
+### [`hapi`]
+-
 ## [Modules][20]
 
 See the [`package.json`][19] dependencies hash for an example of
@@ -432,6 +434,7 @@ For now see the [examples folder][17]
 ## Contributors
 
  - Raynos
+ - Matt-Esch
 
 ## MIT Licenced
 
