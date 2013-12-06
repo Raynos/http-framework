@@ -93,8 +93,22 @@ Credit for the application's goes to
 
  - @visionmedia & express maintainers
 
-### [`hapi`]
--
+### [`hapi`][24] inspired examples
+
+These examples are clones of [`hapi`][24] examples demonstrating
+  how to author web apps without frameworks.
+
+ - [**tail**](examples/tail)
+    An example of handling async errors in your applications 
+    after you have ended the HTTP response
+ - [**validate-api**](examples/validate-api)
+    An example of how to add validation logic to your HTTP
+    route handlers. Both validating query params & the HTTP body
+
+Credit for the application's goes to
+
+ - @hueniverse & hapi maintainers
+
 ## [Modules][20]
 
 See the [`package.json`][19] dependencies hash for an example of
@@ -445,3 +459,4 @@ For now see the [examples folder][17]
   [21]: https://github.com/Raynos/http-framework#examples
   [22]: https://github.com/Raynos/http-framework#documentation
   [23]: https://github.com/Raynos/http-framework#modules
+  [24]: https://github.com/spumko/hapi
