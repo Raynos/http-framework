@@ -107,7 +107,7 @@ These examples are clones of [`hapi`][24] examples demonstrating
 
 Credit for the application's goes to
 
- - @hueniverse & hapi maintainers
+ - @spumko & hapi maintainers
 
 ## [Modules][20]
 
