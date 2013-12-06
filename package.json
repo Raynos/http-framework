@@ -42,7 +42,8 @@
     "online": "0.0.1",
     "level": "~0.18.0",
     "level-sublevel": "~5.1.1",
-    "uuid": "~1.4.1"
+    "uuid": "~1.4.1",
+    "joi": "~2.0.3"
   },
   "licenses": [
     {
