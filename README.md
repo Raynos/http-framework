@@ -230,16 +230,95 @@ function parseArguments(args) {
 
 ### [`cookies`](https://github.com/mikeal/cookies)
 
-> I want to set and get HTTP cookies.
+> I want to persist data between req/res pairs from the same client
 
 Using `cookies` you cam `get()` and `set()` HTTP cookies on a req / res
   pair. `cookies` also allows you to handle options like signed cookies
-  and setting the domain / http only flag
+  and setting the domain / http only flag. Cookies will stick in the
+  http client and will be send again with the next request by that
+  client.
 
 ```js
 var http = require("http")
 var cookies = require("cookies")
 
+http.createServer(function (req, res) {
+    var cookies = Cookies(req, res)
+
+    // fetch value out of cookie
+    var count = Number(cookies.get("count")) || 0
+    count++
+    // store value in cookie
+    cookies.set("count", String(count))
+
+    res.end("you have watched this page " + count + " times")
+}).listen(8080)
+```
+
+Alternatively by hand:
+
+```js
+var http = require("http")
+var cookies = require("cookies")
+
+http.createServer(function (req, res) {
+    var cookie = req.headers.cookie || ""
+
+    // parse cookie out
+    var pairs = cookie.split(";")
+    var obj = {}
+    pairs.forEach(function (pair) {
+        var parts = pair.split("=")
+        obj[parts[0].trim()] = parts[1].trim()
+    })
+
+    var count = Number(obj.count) || 0
+    count++
+
+    // serialize cookie
+    res.setHeader("Set-Cookie", "count=" + count)
+
+    res.end("you have watched this page " + count + " times")
+}).listen(8080)
+```
+
+Note that using `cookies` gives you a more forgiving parser &
+    serializer as well as it handling all options & signed 
+    cookies.
+
+### [`corsify`](https://github.com/raynos/corsify)
+
+> I want to be able to make cross domain ajax requests to my web server
+
+You can set CORS headers on your `res` that allow browsers to make
+    http ajax requests from other domains bypassing the same
+    domain restriction.
+
+This is useful if you have a public HTTP API server that other
+    developers & clients use or if your API server is on a different
+    domain / port then your web server.
+
+```js
+var http = require("http")
+var Corsify = require("corsify")
+
+http.createServer(Corsify({
+    getOrigin: function (req, res) {
+        var origin = req.headers.origin
+
+        // manually white list allowed CORS servers
+        if (origin === "http://web.my-server.com") {
+            return "http://web.my-server-.com"
+        }
+    }
+}, function () {
+    res.end("API server! CORS me.")
+})).listen(8080)
+```
+
+Alternatively by hand:
+
+```js
 // TODO
 ```
 
