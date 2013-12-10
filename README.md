@@ -109,6 +109,19 @@ Credit for the application's goes to
 
  - @spumko & hapi maintainers
 
+### [`connect`][25] inspired examples
+
+These examples are clonse of [`connect`][25] examples demonstrating
+  how to author web apps without frameworks.
+
+  - [**basic-auth**](examples/basic-auth)
+    An example of handling basic authorization style authentication
+    of a web server.
+
+Credit for the applicatiosn` goes to
+    
+ - @visionmedia & connect maintainers
+
 ## [Modules][20]
 
 See the [`package.json`][19] dependencies hash for an example of
@@ -549,7 +562,7 @@ For now see the [examples folder][17]
 
  - [x] Finish porting express examples
  - [ ] continue porting hapi examples
- - [ ] Port connect examples
+ - [ ] continue connect examples
  - [ ] Port koajs examples
  - [ ] Port restify examples
  - [ ] Port partial.js examples
@@ -577,3 +590,4 @@ For now see the [examples folder][17]
   [22]: https://github.com/Raynos/http-framework#documentation
   [23]: https://github.com/Raynos/http-framework#modules
   [24]: https://github.com/spumko/hapi
+  [25]: https://github.com/senchalabs/connect
