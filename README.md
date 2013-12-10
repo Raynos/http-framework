@@ -582,6 +582,7 @@ For now see the [examples folder][17]
 
  - Raynos
  - Matt-Esch
+ - maxogden
 
 ## MIT Licenced
 
