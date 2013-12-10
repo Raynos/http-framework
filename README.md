@@ -124,6 +124,9 @@ Credit for the applicatiosn` goes to
 
 ## [Modules][20]
 
+Check out the [modules folder](modules) for an example of small
+  modules you can combine to build your own custom "framework"
+
 See the [`package.json`][19] dependencies hash for an example of
   many small modules used in the examples folder of this project.
 
