@@ -36,13 +36,14 @@
     "body": "~2.0.1",
     "pwd": "0.0.2",
     "media-types": "~1.0.3",
-    "cookies": "~0.3.7",
+    "cookies": "~0.3.8",
     "corsify": "~1.0.2",
     "json-globals": "~0.2.1",
     "multiparty": "~3.1.0",
     "config-chain": "~1.1.8",
     "string-template": "~0.1.3",
-    "basic": "~0.0.1"
+    "basic": "~0.0.1",
+    "csrf-lite": "~0.1.0"
   },
   "devDependencies": {
     "redis": "~0.9.0",
