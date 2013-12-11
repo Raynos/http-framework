@@ -442,7 +442,7 @@ function getToken(req, res) {
 
 Alternatively by hand:
 
-```
+```js
 var http = require("http")
 var querystring = require("querystring")
 var crypto = require("crypto")
