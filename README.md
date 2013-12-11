@@ -418,22 +418,12 @@ http.createServer(function (req, res) {
 }).listen(8080)
 
 function getToken(req, res) {
-    var cookie = req.headers.cookie || ""
-
-    // parse cookie out
-    var pairs = cookie.split(";")
-    var obj = {}
-    pairs.forEach(function (pair) {
-        var parts = pair.split("=")
-        obj[parts[0].trim()] = parts[1].trim()
-    })
-
     // use the sessionId as the token
-    var token = obj.ssid
+    var token = cookies.get("ssid")
 
     if (!token) {
-        token = csrf()
-        cookies.set("ssid", token)
+        token = crypto.randomBytes(24).toString("base64")
+        res.setHeader("Set-Cookie", "ssid=" + token)
     }
 
     return token
@@ -481,12 +471,22 @@ http.createServer(function (req, res) {
 }).listen(8080)
 
 function getToken(req, res) {
+    var cookie = req.headers.cookie || ""
+
+    // parse cookie out
+    var pairs = cookie.split(";")
+    var obj = {}
+    pairs.forEach(function (pair) {
+        var parts = pair.split("=")
+        obj[parts[0].trim()] = parts[1].trim()
+    })
+
     // use the sessionId as the token
-    var token = cookies.get("ssid")
+    var token = obj.ssid
 
     if (!token) {
-        token = crypto.randomBytes(24).toString("base64")
-        res.setHeader("Set-Cookie", "ssid=" + token)
+        token = csrf()
+        cookies.set("ssid", token)
     }
 
     return token
