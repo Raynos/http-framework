@@ -372,6 +372,14 @@ http.createServer(function (req, res) {
 
 > I want to secure a HTML form post against cross site attack vectors
 
+If you do not protect your HTML forms then other websites can submit
+  your forms on other users behalf and thus hijack their sessions.
+
+This is based on the fact they can just guess the field names and
+  values. To circumvent this we can CSRF to put an effectively
+  random field in the form that can't be guessed by malicious
+  third party websites
+
 ```js
 var http = require("http")
 var querystring = require("querystring")
