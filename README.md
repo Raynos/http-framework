@@ -393,7 +393,7 @@ http.createServer(function (req, res) {
     // a html hidden input field
     if (req.method === "GET") {
         res.setHeader("Content-Type", "text/html")
-        res.end("<html><form method=post>"" +
+        res.end("<html><form method=post>" +
           "<label>Name <input name=name></label>" +
           csrf.html(token) +
           "<input type=submit value=submit>" +
@@ -456,7 +456,7 @@ http.createServer(function (req, res) {
         // HTML encode the token so it can be inserted into a form
         token = token.replace(/"/g, "&quot;")
         res.setHeader("Content-Type", "text/html")
-        res.end("<html><form method=post>"" +
+        res.end("<html><form method=post>" +
           "<label>Name <input name=name></label>" +
           "<input type=hidden name=x-csrf-token value=\"" + token + "\">" +
           "<input type=submit value=submit>" +
