@@ -117,6 +117,8 @@ These examples are clonse of [`connect`][25] examples demonstrating
   - [**basic-auth**](examples/basic-auth)
     An example of handling basic authorization style authentication
     of a web server.
+  - [**csrf**](examples/csrf)
+    An example of adding csrf security to a form in a web application
 
 Credit for the applicatiosn` goes to
     
