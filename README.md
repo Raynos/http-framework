@@ -378,7 +378,7 @@ Using `filed` you will stream a file down the `HttpResponse`. The usage
 
 ```js
 var http = require("http")
-var filed = require("http-framework/filed")
+var filed = require("filed")
 
 http.createServer(function (req, res) {
     filed(__dirname + "/static/index.html").pipe(res)
@@ -423,7 +423,7 @@ http.createServer(function (req, res) {
 
 ```js
 var http = require("http")
-var formBody = require("http-framework/form-body")
+var formBody = require("body/form")
 
 http.createServer(function (req, res) {
     formBody(req, res, function (err, body) {
@@ -493,7 +493,7 @@ body of 100s of GBs.
 
 ```js
 var http = require("http")
-var sendJson = require("http-framework/send-json")
+var sendJson = require("send-data/json")
 
 http.createServer(function (req, res) {
     sendJson(req, res, {
@@ -528,7 +528,7 @@ http.createServer(function (req, res) {
 ```js
 var http = require("http")
 var fs = require("fs")
-var sendHtml = require("http-framework/send-html")
+var sendHtml = require("send-data/html")
 
 var page = fs.readFileSync(__dirname + "/static/index.html")
 
