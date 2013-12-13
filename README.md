@@ -41,7 +41,7 @@ These examples are clones of [`express`][18] examples demonstrating
     content based on what the user asks for in his Accept header.
  - [**cookie-sessions**](examples/cookie-sessions)
     An example of storing session information in a users cookie
- - [**cookie**](examples/cookie)
+ - [**cookies**](examples/cookies)
     An example of setting a cookie to track a user
  - [**cors**](examples/cors)
     An example of adding cors support to your HTTP server
