@@ -111,7 +111,7 @@ Credit for the application's goes to
 
 ### [`connect`][25] inspired examples
 
-These examples are clonse of [`connect`][25] examples demonstrating
+These examples are clones of [`connect`][25] examples demonstrating
   how to author web apps without frameworks.
 
   - [**basic-auth**](examples/basic-auth)
