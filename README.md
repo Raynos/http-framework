@@ -2,6 +2,30 @@
 
 A web framework based purely on `require('http')`
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [http-framework](#http-framework)
+    - [Motivation](#motivation)
+    - [[Modules][20]](#modules20)
+        - [For a complete list of [Modules check out the wiki][20]](#for-a-complete-list-of-modules-check-out-the-wiki20)
+    - [[Documentation][26]](#documentation26)
+        - [[HTTP workshop][27]](#http-workshop27)
+        - [module docs](#module-docs)
+        - [rest of the modules](#rest-of-the-modules)
+    - [[Examples][17]](#examples17)
+        - [[`express`][18] inspired examples](#express18-inspired-examples)
+        - [[`hapi`][24] inspired examples](#hapi24-inspired-examples)
+        - [[`connect`][25] inspired examples](#connect25-inspired-examples)
+    - [Todo](#todo)
+    - [Installation](#installation)
+    - [Contributors](#contributors)
+    - [MIT Licenced](#mit-licenced)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 ## Motivation
 
 `require('http')` is a web framework. All you need are a few
