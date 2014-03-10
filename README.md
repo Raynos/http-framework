@@ -76,7 +76,7 @@ These examples are clones of [`express`][18] examples demonstrating
     content based on what the user asks for in his Accept header.
  - [**cookie-sessions**](examples/cookie-sessions)
     An example of storing session information in a users cookie
- - [**cookie**](examples/cookie)
+ - [**cookies**](examples/cookies)
     An example of setting a cookie to track a user
  - [**cors**](examples/cors)
     An example of adding cors support to your HTTP server
@@ -146,7 +146,7 @@ Credit for the application's goes to
 
 ### [`connect`][25] inspired examples
 
-These examples are clonse of [`connect`][25] examples demonstrating
+These examples are clones of [`connect`][25] examples demonstrating
   how to author web apps without frameworks.
 
   - [**basic-auth**](examples/basic-auth)
