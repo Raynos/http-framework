@@ -3,7 +3,7 @@ var http = require("http")
 var Router = require("routes-router")
 var sendHtml = require("send-data/html")
 
-var serveFileDownload = require("./serve-file-download.js")
+var serveFileDownload = require("serve-file-download")
 
 var app = Router()
 
