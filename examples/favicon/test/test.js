@@ -15,6 +15,6 @@ test('serve-favicon', function(t) {
       t.deepEqual(d.toString(), 'favicon example')
     })
   }).on('error', function(e) {
-    console.log(e.message);
+    console.log(e.message)
   })
 })
