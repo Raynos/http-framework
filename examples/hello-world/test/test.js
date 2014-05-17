@@ -6,7 +6,7 @@ var test = require("tape")
       path: "/"
     }
 
-// test if the favicon was served
+// check the res sent by the hello world server
 test("hello-world", function(t) {
   t.plan(2)
   http.get(options, function(res) {
