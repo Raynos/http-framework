@@ -179,9 +179,9 @@ These examples are clones of [`connect`][25] examples demonstrating
   - [**csrf**](examples/csrf)
     An example of adding csrf security to a form in a web application
 
-Credit for the applicatiosn` goes to
+Credit for the applications goes to
     
- - @visionmedia & connect maintainers
+ - @tj & connect maintainers
 
 ## Todo
 
