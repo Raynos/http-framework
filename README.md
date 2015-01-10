@@ -148,9 +148,9 @@ These examples are clones of [`express`][18] examples demonstrating
     An example JSON REST api web server. Contains API key 
     authentication and error handling
 
-Credit for the application's goes to
+Credit for the applications goes to
 
- - @visionmedia & express maintainers
+ - @tj & express maintainers
 
 ### [`hapi`][24] inspired examples
 
@@ -166,7 +166,7 @@ These examples are clones of [`hapi`][24] examples demonstrating
 
 Credit for the application's goes to
 
- - @spumko & hapi maintainers
+ - @hapijs & hapi maintainers
 
 ### [`connect`][25] inspired examples
 
@@ -179,9 +179,9 @@ These examples are clones of [`connect`][25] examples demonstrating
   - [**csrf**](examples/csrf)
     An example of adding csrf security to a form in a web application
 
-Credit for the applicatiosn` goes to
+Credit for the applications goes to
     
- - @visionmedia & connect maintainers
+ - @tj & connect maintainers
 
 ## Todo
 
