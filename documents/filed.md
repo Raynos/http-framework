@@ -40,7 +40,7 @@ http.createServer(function (req, res) {
         var stream = fs.createReadStream(__dirname + "/static/index.html")
         res.statusCode = 200
         res.setHeader("Content-Type", "text/html")
-        res.setHeader("Content-Type", stat.size)
+        res.setHeader("Content-Length", stat.size)
         stream.pipe(res)
     })
 }).listen(8080)
