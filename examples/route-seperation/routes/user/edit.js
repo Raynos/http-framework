@@ -12,7 +12,7 @@ module.exports = {
 }
 
 function renderPage(req, res, opts, callback) {
-    loadUser(opts.id, function (err, user) {
+    loadUser(opts.params.id, function (err, user) {
         if (err) {
             return callback(err)
         }
@@ -28,7 +28,7 @@ function renderPage(req, res, opts, callback) {
 // normally you would handle validation logic and asynchronously
 // save back to the database
 function updateUser(req, res, opts, callback) {
-    var userId = opts.id
+    var userId = opts.params.id
     formBody(req, res, function (err, body) {
         if (err) {
             return callback(err)
