@@ -13,7 +13,7 @@ function map(router, hash, route) {
 
         var value = hash[routeOrMethod]
         var newRoute = route + routeOrMethod
-        router.addRoute(newRoute, value)
+        router.set(newRoute, value)
         map(router, value, newRoute)
     })
 }

@@ -6,7 +6,7 @@ var loadUser = require("./load-user.js")
 module.exports = userView
 
 function userView(req, res, opts, cb) {
-    loadUser(opts.id, function (err, user) {
+    loadUser(opts.params.id, function (err, user) {
         if (err) {
             return cb(err)
         }
