@@ -33,7 +33,7 @@ app.addRoute("/search/:query?", function (req, res, opts, cb) {
     })
 })
 
-// serve the javascript client seperately.
+// serve the javascript client separately.
 app.addRoute("/client.js", function (req, res) {
     filed(__dirname + "/client.js").pipe(res)
 })

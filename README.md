@@ -130,7 +130,7 @@ These examples are clones of [`express`][18] examples demonstrating
     An example of a `map` utility function that can be used to
     structure your routes differently. This demonstrates you can
     do whatever you want, if you like it, do it.
- - [**route-seperation**](examples/route-seperation)
+ - [**route-separation**](examples/route-separation)
     An example of spreading your route handlers over multiple
     files. 
  - [**search**](examples/search)

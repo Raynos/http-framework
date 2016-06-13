@@ -11,6 +11,6 @@ function fivehundred(err, opts) {
         h("h1", "Error: " + err.message),
         opts.verbose ?
             h("pre", err.stack) :
-            h("p", "An error occured!")
+            h("p", "An error occurred!")
     ])
 }

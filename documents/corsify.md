@@ -53,7 +53,7 @@ http.createServer(function (req, res) {
 
     // CORS in browsers send a preflight OPTIONS HTTP request
     // for POSTs to see whether making a HTTP request to this
-    // end point is allowed. You should handle `OPTIONS` seperately
+    // end point is allowed. You should handle `OPTIONS` separately
     // from `GET` / `POST` / other headers.
     if (req.method === "OPTIONS") {
         return res.end()
