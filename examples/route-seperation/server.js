@@ -24,5 +24,5 @@ app.addRoute("/posts", posts)
 
 var server = http.createServer(app)
 server.listen(3000)
-console.log("route seperated server listening on port 3000")
+console.log("route separated server listening on port 3000")
 

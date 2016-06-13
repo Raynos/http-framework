@@ -4,7 +4,7 @@ var SubLevel = require("level-sublevel")
 module.exports = Db
 
 // Create a database based on our configuration
-// we keep the production & local database seperate
+// we keep the production & local database separate
 // also set encoding to json so we can just store objects
 function Db(config) {
     var db = level(config.dbPath, {

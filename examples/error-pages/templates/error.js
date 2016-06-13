@@ -7,7 +7,7 @@ function error(content) {
         h("head",
             h("title", "Error")),
         h("body", [
-            h("h1", "An error occured!"),
+            h("h1", "An error occurred!"),
             content
         ])
     ]).outerHTML
